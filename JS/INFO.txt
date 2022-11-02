@@ -1,1 +1,2 @@
 Place where to store SoftUni JavaScript code and materials.
+Added by PC.
