@@ -1,1 +1,1 @@
-SoftUni "JS Basics Course" related files.
+SoftUni "JS Basics Course" materials.
