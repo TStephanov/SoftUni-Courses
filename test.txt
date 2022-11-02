@@ -1,4 +1,6 @@
-Created with GitBash terminal on PC ;).
+(1)Created with GitBash terminal on PC ;).
 
-Created from GitHub WEB ;) ...
+(2)Created from GitHub WEB ;) ...
 >>>>>>> 62eaac19ac03cc18ee1258769bcb51d26ffa892b
+
+(4)Added something from GutHub WEB again
