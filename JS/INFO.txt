@@ -1,1 +1,1 @@
-Place where to store SoftUni JavaScript code and materials.
+Place where to store SoftUni JavaScript course data.
