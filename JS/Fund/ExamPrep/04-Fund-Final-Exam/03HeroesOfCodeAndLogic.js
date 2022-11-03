@@ -81,8 +81,8 @@ function heroesOfCodeAndLogicVII(input) {
 
     for (let [heroe, heroeInfo] of heroes) {
         console.log(heroe);
-        console.log(`  HP: ${heroes.get(heroe).hitPts}`);
-        console.log(`  MP: ${heroes.get(heroe).manaPts}`);
+        console.log(`  HP: ${heroeInfo.hitPts}`);
+        console.log(`  MP: ${heroeInfo.manaPts}`);
     }
 }
 
