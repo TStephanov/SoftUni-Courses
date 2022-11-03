@@ -1,0 +1,8 @@
+Password Reset
+Array as an input. First element is a scrabmled string. Next element(s), upon 'Done' are strings combination of a specific action and parameters
+
+Barcodes
+Array as an input. First is a count of elements, which should be processed. Mainly, to test RegExp.
+
+Heroes Of Code And Logic
+Array as an input. First element, count of heroes. Next element, actions with parameters to execute upon specific heroe.
