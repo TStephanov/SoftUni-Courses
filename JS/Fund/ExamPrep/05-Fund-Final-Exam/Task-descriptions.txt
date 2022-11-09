@@ -1,0 +1,8 @@
+Activatoin Keys
+Modify string based on set of commands. Main purpose, testing of string operations.
+
+Emoji
+Find valid emojis and store information based on specific criterias. Main purpose, testing of RegExp knowledge.
+
+P!rates
+Modify object based on set of specific commands. Main purpose, testing of associative arraya(e.g. collections, dictionaries).
