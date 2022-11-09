@@ -1,0 +1,8 @@
+Secret Chat
+Reveals hidden message, based on set of commands. Main target, test string operations.
+
+Mirror Words
+Find a valid word couples and stores only those, where words are mirrored. Main target, test RegExp knowledge.
+
+Need For Speed III
+Modify vehicle details, based on set of commands. Main target, associative arrays(e.g. collections, dictionaries) knowledge test.
