@@ -1,0 +1,157 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    width: 950px;
+    margin: 0 auto;
+}
+
+#hr-pink {
+    width: 60px;
+    height: 2px;
+    background-color: rgb(214, 116, 114);
+    border: none;
+    margin: 19.92px 446px;
+}
+
+#hr-white {
+    width: 60px;
+    height: 2px;
+    background-color: white;
+    border: none;
+    margin: 19.92px 446px;
+}
+
+p.heading {
+    font-size: 19px;
+    margin: 0;
+    padding-top: 30px;
+}
+
+/* header */
+header {
+    background-color: white;
+}
+
+header nav {
+    text-align: center;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 16px 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    list-style: none;
+    padding-right: 33px;
+}
+
+header a {
+    text-decoration: none;
+    color: rgb(214, 116, 114);
+}
+
+/* main */
+/* - perfect touch */
+main section:nth-child(1) {
+    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(./Resources/Images/header-flower.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+main section:nth-child(1) h1 {
+    padding-top: 238px;
+    margin: 0;
+}
+
+main section:nth-child(1) article {
+    padding: 0 250px 218px 250px;
+}
+
+/* - read more */
+main section:nth-child(2) {
+    background-color: rgb(214, 116, 114);
+    color: white;
+    text-align: center;
+    padding-top: 1px;
+}
+
+main section:nth-child(2) article {
+    padding: 0 233px 9px 233px;
+}
+
+main section:nth-child(2) button {
+    margin: 23px 0;
+    border: none;
+    background: white;
+    color: rgb(214, 116, 114);
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+main section:nth-child(2) button:hover {
+    border: 1px solid white;
+    background: rgb(214, 116, 114);
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* - how it works */
+
+/* TABLE start */
+main section:nth-child(3) {
+    text-align: center;
+}
+
+main section:nth-child(3) table {
+    width: 100%;
+}
+
+main section:nth-child(3) table tbody tr td {
+    width: 265px;
+}
+
+main section:nth-child(3) table tbody tr td img {
+    width: 100px;
+}
+/* TABLE end */
+
+main section:nth-child(4) {
+    text-align: center;
+}
+
+main section:nth-child(3) article {
+    display: inline-block;
+    width: 31%;
+}
+
+main section:nth-child(3) section article img {
+    width: 100px;
+}
+
+main section:nth-child(3) p:last-child {
+    color: #C1B09F;
+}
+
+main section:nth-child(4) {
+    padding: 0 83px;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    background: rgb(214, 116, 114);
+    color: white;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+    padding: 16px 0;
+}
