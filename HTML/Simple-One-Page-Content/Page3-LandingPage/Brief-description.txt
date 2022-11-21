@@ -1,1 +1,0 @@
-/* No functionality landing page, created by HTML and CSS. Screenshot guidances from an the course were used during creation */
