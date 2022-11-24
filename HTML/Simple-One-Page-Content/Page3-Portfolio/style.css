@@ -1,0 +1,138 @@
+body {
+    width: 1100px;
+    margin: 0 auto;
+    font-family: 'Helvetica', sans-serif;
+}
+
+/* header */
+body header {
+    text-align: center;
+    background: #F0F1F5;
+}
+
+body header ul {
+    margin: 0;
+    padding: 13px 0;
+}
+
+body header ul li {
+    display: inline-block;
+    padding: 14px 50px;
+    border-left: 3px solid white;
+}
+
+body header ul li:last-child {
+    border-right: 3px solid white;
+}
+
+body header ul li a {
+    text-decoration: none;
+    color: #00d3d4;
+}
+
+body header ul li a p {
+    margin: 0;
+    padding: 0;
+}
+
+body header ul li a i {
+    font-size: 30px;
+    margin: 0;
+    padding: 0 0 15px 0;
+}
+
+/* main */
+body main section {
+    display: inline-block;
+    margin-right: -4px;
+}
+
+/* section 1 */
+body main section:nth-child(1) {
+    background: #555c6f;
+    color: #b2b6c0;
+    width: 416px;
+}
+
+body main section:nth-child(1) h3 {
+    padding-inline-start: 40px;
+    padding-top: 19px;
+}
+
+body main section:nth-child(1)>ul {
+    padding: 21px 0 33px 50px;
+    display: inline-block;
+}
+
+body main section:nth-child(1)>ul>li {
+    list-style: none;
+}
+
+body main section:nth-child(1)>ul>li {
+    padding-bottom: 11px;
+}
+
+body main section:nth-child(1) nav {
+    display: inline-block;
+    width: 260px;
+}
+
+body main section:nth-child(1) nav ul li {
+    list-style: none;
+    display: inline-block;
+    padding-right: 8px;
+}
+
+body main section:nth-child(1) nav ul li a {
+    color: #b2b6c0;
+}
+
+body main section:nth-child(1) footer {
+    font-size: 14px;
+    padding-inline-start: 40px;
+    padding-top: 44px;
+    padding-bottom: 15px;
+}
+
+/* section 2 */
+body main section:nth-child(2) {
+    width: 684px;
+    background: #00d3d4;
+    color: white;
+    vertical-align: top;
+}
+
+body main section:nth-child(2) article {
+    display: inline-block;
+}
+
+body main section:nth-child(2) h2 ul li {
+    list-style: none;
+}
+
+body main section:nth-child(2) article:nth-child(1) {
+    width: 40%;
+}
+
+body main section:nth-child(2) article:nth-child(1) h2 {
+    margin-top: 44px;
+}
+
+body main section:nth-child(2) article:nth-child(1) p {
+    padding-inline-start: 40px;
+}
+
+body main section:nth-child(2) article:nth-child(1) p:last-child {
+    margin-bottom: 57px;
+}
+
+body main section:nth-child(2) article:nth-child(2) {
+    vertical-align: top;
+    padding-left: 108px;
+    padding-top: 29px;
+}
+
+body main section:nth-child(2) article:nth-child(2) img {
+    width: 199px;
+    border: 10px white solid;
+}
