@@ -10,8 +10,7 @@
 <body>
     <div id="container">
         <label for="input">Number</label>
-        <!-- <input type="number" id="input" /><br> -->
-        <input id="input" /><br>
+        <input type="number" id="input" /><br>
         
         <label for="selectMenuFrom">From</label>
         <select id="selectMenuFrom">
@@ -19,7 +18,9 @@
         </select>
         <label for="selectMenuTo">To</label>
         <select id="selectMenuTo">
-            <option selected value=""></option>
+            <option selected="" value=""></option>
+            <option value="binary">Binary</option>
+            <option value="hexadecimal">Hexadecimal</option>
         </select>
         <button onclick="solve()">Convert it</button>
 
@@ -28,8 +29,8 @@
         <label for="result">Result</label>
         <input type="text" name="output" id="result" disabled readonly />
     </footer>
-    <script>
-        // solve();
-    </script>
+    <!-- <script>
+        solve();
+    </script> -->
 </body>
 </html>

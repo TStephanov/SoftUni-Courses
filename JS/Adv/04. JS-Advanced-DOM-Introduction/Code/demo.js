@@ -1,10 +1,10 @@
-function decimalToBinary(num) {
+function decimalToBinary(number) {
     // decimal to binary converter
     let initialBinary = '';
 
-    while (num > 0) {
-        let result = num % 2;
-        num = Math.floor(num / 2);
+    while (number > 0) {
+        let result = number % 2;
+        number = Math.floor(number / 2);
         initialBinary += result;
     }
 
@@ -36,18 +36,19 @@ function decimalToHexadecimal(number) {
     }
     
     // convert decimal to binary
-    let binary = demo(number);
+    let binary = decimalToBinary(number);
 
     // convert binary to hexadecimal
-    let firstHalf = binary.slice(0, binary.length / 2);
-    let secondHalf = binary.slice(binary.length / 2);
+    let leftHalf = binary.slice(0, binary.length / 2);
+    let rightHalf = binary.slice(binary.length / 2);
     let hexadecimalNum = '';
 
-    hexadecimalNum += collection[firstHalf];
-    hexadecimalNum += collection[secondHalf];
+    hexadecimalNum += collection[leftHalf];
+    hexadecimalNum += collection[rightHalf];
 
     // console.log(hexadecimalNum);
     return hexadecimalNum;
 }
 
-demo2(179);
+let result = decimalToHexadecimal(172);
+console.log(result);
