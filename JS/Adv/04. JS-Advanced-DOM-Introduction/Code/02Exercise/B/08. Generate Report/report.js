@@ -33,7 +33,7 @@ function generateReport() {
 
     // store values for respective columns of each row into and object and push them into array
     let resultArray = [];
-
+    
     table.forEach((row) => {
         let rowCellsArray = row.querySelectorAll('td');
         let currentDataObj = {};
@@ -41,17 +41,10 @@ function generateReport() {
         columnsChecked.forEach((columnIndex) => {
             currentDataObj[keysCollection[columnIndex]] = rowCellsArray[columnIndex].textContent;
         });
-        
+
         resultArray.push(currentDataObj);
     });
-    console.log(resultArray);
-    let resultToPrint = [];
-
-    resultArray.forEach(employee => {
-        let info = JSON.stringify(employee);
-        resultToPrint.push(info);
-    });
-
-    let print = document.getElementById('output');
-    print.value = `[\n${resultToPrint}\n]`;
+    
+    let print = document.querySelector('#output');
+    print.value = JSON.stringify(resultArray, null, 2);
 }

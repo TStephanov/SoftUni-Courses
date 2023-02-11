@@ -1,7 +1,11 @@
 function demo() {
-    let obj = {one: 1, two: 2, three: 3,};
-    let result = obj['two'];
-    console.log(result);
+    let value = Number('356');
+
+    if (isNaN(value)) {
+        console.log('insert a number');
+    } else {
+        console.log(value, typeof value);
+    }
 }
 
 demo();

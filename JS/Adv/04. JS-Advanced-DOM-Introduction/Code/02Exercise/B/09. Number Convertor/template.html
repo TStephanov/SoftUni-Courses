@@ -10,7 +10,9 @@
 <body>
     <div id="container">
         <label for="input">Number</label>
-        <input type="number" id="input" /><br>
+        <!-- <input type="number" id="input" /><br> -->
+        <input id="input" /><br>
+        
         <label for="selectMenuFrom">From</label>
         <select id="selectMenuFrom">
             <option selected value="decimal">Decimal</option>
@@ -19,7 +21,7 @@
         <select id="selectMenuTo">
             <option selected value=""></option>
         </select>
-        <button>Convert it</button>
+        <button onclick="solve()">Convert it</button>
 
     </div>
     <footer>
@@ -27,7 +29,7 @@
         <input type="text" name="output" id="result" disabled readonly />
     </footer>
     <script>
-        solve();
+        // solve();
     </script>
 </body>
 </html>
