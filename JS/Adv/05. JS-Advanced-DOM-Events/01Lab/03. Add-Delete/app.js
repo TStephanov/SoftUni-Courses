@@ -16,6 +16,10 @@ function addItem() {
     newInsideAElement.addEventListener('click', () => {
         newInsideAElement.parentNode.parentNode.removeChild(newInsideAElement.parentNode);
     });
+    // Ivo Papazov
+    // newInsideAElement.addEventListener('click', (e) => {
+    //     e.currentTarget.parentNode.remove();
+    // });
 
     newLiElement.appendChild(newInsideAElement);
 
