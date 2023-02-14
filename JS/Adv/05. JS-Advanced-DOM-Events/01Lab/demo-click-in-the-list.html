@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo DOM Events</title>
+</head>
+
+<body>
+    <ul id="parent-list">
+        <li id="post-1">Item 1</li>
+        <li id="post-2">Item 2</li>
+    </ul>
+    <ul id="result" style="list-style-type: none"></ul>
+
+    <script>
+        let listToPrint = document.getElementById('result');
+        let bufferResult = [];
+
+        document.getElementById("parent-list")
+            .addEventListener("click", function (e) {
+                console.log(e);
+                console.log(e.target);
+                console.log(e.target.nodeName);
+                console.log('------------');
+
+                let newLiElement = document.createElement('li');
+                newLiElement.textContent = `List item ${e.target.id.replace("post-", "")} was clicked!`;
+
+                if (e.target.nodeName == "LI") {
+                    listToPrint.appendChild(newLiElement);
+                }
+            });
+    </script>
+</body>
+
+</html>
