@@ -28,20 +28,20 @@ function solve() {
    // "Checkout" - calculate total amount, print it to textarea
    const checkoutButtonElement = document.querySelector('button[class="checkout"]');
 
-   // disable all buttons
    checkoutButtonElement.addEventListener('click', (e) => {
       const productsNamesList = Object.keys(products);
       const prices = Object.values(products);
       let totalPrice = 0;
-
+      
       prices.forEach(priceInfo => {
          const price = Number(priceInfo.price);
          totalPrice += price;
       });
-
+      
       const priceInfoElement = document.createTextNode(`You bought ${productsNamesList.join(', ')} for ${totalPrice.toFixed(2)}.`);
       textAreaElement.appendChild(priceInfoElement);
-
+      
+      // disable all buttons
       const addButtonsElement = document.querySelectorAll('button[class="add-product"]');
 
       for (let button of addButtonsElement) {
@@ -49,10 +49,5 @@ function solve() {
       }
 
       e.target.setAttribute('disabled', '');
-   });
-
-   let printButton = document.getElementById('print');
-   printButton.addEventListener('click', () => {
-      console.log(products);
    });
 }
