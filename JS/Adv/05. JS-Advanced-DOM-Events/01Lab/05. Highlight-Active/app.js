@@ -1,19 +1,15 @@
 function focused() {
-    let divElements = document.querySelectorAll('div div');
+    let inputElements = document.querySelectorAll('div div');
 
-    for (let div of divElements) {
-        const inputElement = div.querySelector('input[type="text"]');
-        
-        inputElement.addEventListener('mouseover', (e) => {
-            console.log('focused');
-            inputElement.parentNode.classList.remove('blurred');
-            inputElement.parentNode.classList.add('focused');
-        }, true);
-        
-        inputElement.addEventListener('mouseout', (e) => {
-            console.log('blured');
-            inputElement.parentNode.classList.remove('focused');
-            inputElement.parentNode.classList.add('blurred');
-        }, true);
+    for (let element of inputElements) {
+        element.addEventListener('click', (e) => {
+            // remove 'focused' class for all elements
+            for (let div of inputElements) {
+                div.classList.remove('focused');
+            }
+
+            // set focused class for click event element
+            element.classList.add('focused');
+        });
     }
 }
