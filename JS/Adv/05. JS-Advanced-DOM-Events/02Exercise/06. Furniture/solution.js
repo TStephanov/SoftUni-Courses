@@ -1,5 +1,5 @@
 function solve() {
-    // add event listeners to "generate" and "buy" buttons fod adding new elements to the furniture list
+    // add event listeners to "generate" and "buy" buttons
     let generateBtnElements = Array.from(document.querySelectorAll('button'));
     generateBtnElements.forEach(button => {
         if (button.textContent === 'Generate') {
@@ -11,11 +11,14 @@ function solve() {
 
     // take textarea input and parse it to object
     function addFurniture() {
-        console.log('Generate button was clicked');
-        let inputElements = document.querySelector('#exercise textarea').value;
-        let elements = JSON.parse(inputElements);
+        let inputElement = document.querySelector('#exercise textarea:nth-of-type(1)').value;
+        let elements = JSON.parse(inputElement);
+        console.log(elements);
     
-        // add furniture to the list
+        // enable existing furntiure checkbox element - not by a task description
+        // document.querySelector('tbody tr td input[type="checkbox"]').removeAttribute('disabled');
+
+        // add furniture(s) to the list
         for (let furnitureObject of elements) { // img, name, price, decFactor
             // create new row with each object property as separate cell
             let newRow = document.createElement('tr');
@@ -57,14 +60,45 @@ function solve() {
     }
 
     function buyFurniture() {
-        console.log('Buy button was clicked');
+        // take rows with checked boxes
+        let checkboxElements = Array.from(document.querySelectorAll('tbody tr td input[type="checkbox"]'));
+        let checkedNames = [];
+        let checkedTotalPrice = 0;
+        let checkedDecFactorSum = 0;
+        let checkedDecFactorAvgAmount = 0;
+        let counter = 0;
+
+        checkboxElements.forEach(checkbox => {
+            if (checkbox.checked) {
+                counter++;
+                let trData = checkbox.parentElement.parentElement;
+                let name = trData.querySelector('td:nth-of-type(2)').textContent;
+                let price = trData.querySelector('td:nth-of-type(3)').textContent;
+                let decorationFactor = trData.querySelector('td:nth-of-type(4)').textContent;
+                
+                checkedNames.push(name.trim()); // save names of the selected furniture into array
+                checkedTotalPrice += Number(price); // calculate total amount of the checked furniture
+                checkedDecFactorSum += Number(decorationFactor) // calculate total decoration factor
+            }
+        });
+
+        // if no added furniture, don't calculate avg, as "checkedDecFactorSum / counter" will be "0 / 0 = NaN"
+        (counter !== 0) ? (checkedDecFactorAvgAmount = checkedDecFactorSum / counter) : (checkedDecFactorAvgAmount);
+
+        let outputElement = document.querySelector('#exercise textarea:nth-of-type(2)');
+        outputElement.appendChild(document.createTextNode(`Bought furniture: ${checkedNames.join(', ')}`));
+        outputElement.appendChild(document.createTextNode(`\nTotal price: ${checkedTotalPrice.toFixed(2)}`));
+        outputElement.appendChild(document.createTextNode(`\nAverage decoration factor: ${checkedDecFactorAvgAmount.toFixed(1)}`));
+
+        // // Option 2
+        // let result = `Bought furniture: ${checkedNames.join(', ')}`;
+        // result += `\nTotal price: ${checkedTotalPrice.toFixed(2)}`;
+        // result += `\nAverage decoration factor: ${checkedDecFactorAvgAmount.toFixed(1)}`;
+        
+        // // Option 3
+        // let result = `Bought furniture: ${checkedNames.join(', ')}\nTotal price: ${checkedTotalPrice.toFixed(2)} \nAverage decoration factor: ${checkedDecFactorAvgAmount.toFixed(1)}`;
+        
+        // // Set result for Option 2 & 3
+        // outputElement.value = result; // from .textContent to .value
     }
-
-    // take rows with checked boxes
-    let checkboxElements = document.querySelectorAll('tbody tr td input[type="checkbox"]');
-    console.log(checkboxElements)
-
-    // - print names of the furnitures checked - save them to an array
-    // - calculate total amount of the checked furniture - print
-    // - calculate average decoration factor - print
 }

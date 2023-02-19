@@ -1,5 +1,9 @@
 function attachEventsListeners() {
-    let dimensions = {
+    // add event listener to a convert button
+    let convertBtn = document.getElementById('convert');
+    convertBtn.addEventListener('click', convert);
+
+    let units = {
         km: 1000,
         m: 1,
         cm: 0.01,
@@ -7,40 +11,29 @@ function attachEventsListeners() {
         mi: 1609.34,
         yrd: 0.9144,
         ft: 0.3048,
-        in: 0.0254,
+        in: 0.0254
     }
 
-    document.querySelector('input[id="convert"]').addEventListener('click', (ev) => {
-        let inputUnitRaw = document.getElementById('inputUnits').selectedOptions; // an array with selected element - our case is 1 element
-        let outputUnitRaw = document.getElementById('outputUnits').selectedOptions; // an array with selected element - our case is 1 element
+    // create a function to do the conversion
+    function convert() {
+        // take user input value
+        let inputValue = Number(document.getElementById('inputDistance').value);
 
-        let inputUnit = inputUnitRaw[0].value;
-        let outputUnit = outputUnitRaw[0].value;
+        // take user chosen input unit
+        let inputUnit = document.getElementById('inputUnits').value;
 
-        let inputContent = document.getElementById('inputDistance');
-        let outputContent = document.getElementById('outputDistance');
+        // take user chosen output unit
+        let outputUnit = document.getElementById('outputUnits').value;
 
-        let inputValueToM = Number(inputContent.value) * dimensions[inputUnit]; // convert input unit to meters
-        let outputResult = calculate(inputValueToM, outputUnit);
+        // convert input to output unit
+        // - convert input to m
+        let inputValueToM = inputValue * units[inputUnit];
 
-        console.log(outputResult);
-        outputContent.removeAttribute('disabled');
-        outputContent.value = outputResult.toFixed(3);
-
-    });
-
-    function calculate(number, outputUnit) {
-        let options = {
-            km: number / dimensions['km'],
-            m: number / dimensions['m'],
-            cm: number / dimensions['cm'],
-            mm: number / dimensions['mm'],
-            mi: number / dimensions['mi'],
-            yrd: number / dimensions['yrd'],
-            ft: number / dimensions['ft'],
-            in: number / dimensions['in'],
-        }
-
-        return options[outputUnit];
-    }
+        // - calculate output from m, to desired output unit
+        let outputResult = inputValueToM / units[outputUnit];
+        
+        // print converted value
+        let outputValue = document.getElementById('outputDistance');
+        outputValue.value = outputResult;
+    }       
 }
