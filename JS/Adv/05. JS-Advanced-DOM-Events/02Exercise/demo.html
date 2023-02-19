@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo doc</title>
+</head>
+
+<body>
+    <div id="radioBtns">
+        <label>Radio button 1:</label>
+        <input type="radio" name="radioBtns" value="rb1" />
+        <label>Radio button 2:</label>
+        <input type="radio" name="radioBtns" value="rb2" />
+    </div>
+
+    <label for="checkboxBtn">Checkbox:</label>
+    <input type="checkbox" id="checkboxBtn">
+    <div id="btn">
+        <button onclick="clicked()" style="background-color: blue; color: white; padding: 5px 10px; border-radius: 5%;">Click me :)</button>
+    </div>
+    <script>
+        function clicked() {
+            let rbtn1 = document.querySelector('input[type="radio"][value="rb1"]').checked;
+            let rbtn2 = document.querySelector('input[type="radio"][value="rb2"]').checked;
+            console.log(`rbtn1 clicked: ${rbtn1}`);
+            console.log(`rbtn2 clicked: ${rbtn2}`);
+
+            let checkBx = document.getElementById('checkboxBtn').checked;
+            console.log(checkBx);
+        }
+    </script>
+</body>
+
+</html>
