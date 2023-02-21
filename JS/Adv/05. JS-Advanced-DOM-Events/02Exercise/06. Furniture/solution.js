@@ -19,7 +19,7 @@ function solve() {
         // document.querySelector('tbody tr td input[type="checkbox"]').removeAttribute('disabled');
 
         // add furniture(s) to the list
-        for (let furnitureObject of elements) { // img, name, price, decFactor
+        for (const furnitureObject of elements) { // img, name, price, decFactor
             // create new row with each object property as separate cell
             let newRow = document.createElement('tr');
     
@@ -86,9 +86,9 @@ function solve() {
         (counter !== 0) ? (checkedDecFactorAvgAmount = checkedDecFactorSum / counter) : (checkedDecFactorAvgAmount);
 
         let outputElement = document.querySelector('#exercise textarea:nth-of-type(2)');
-        outputElement.appendChild(document.createTextNode(`Bought furniture: ${checkedNames.join(', ')}`));
-        outputElement.appendChild(document.createTextNode(`\nTotal price: ${checkedTotalPrice.toFixed(2)}`));
-        outputElement.appendChild(document.createTextNode(`\nAverage decoration factor: ${checkedDecFactorAvgAmount.toFixed(1)}`));
+        // outputElement.appendChild(document.createTextNode(`Bought furniture: ${checkedNames.join(', ')}`));
+        // outputElement.appendChild(document.createTextNode(`\nTotal price: ${checkedTotalPrice.toFixed(2)}`));
+        // outputElement.appendChild(document.createTextNode(`\nAverage decoration factor: ${checkedDecFactorAvgAmount.toFixed(1)}`));
 
         // // Option 2
         // let result = `Bought furniture: ${checkedNames.join(', ')}`;
@@ -96,9 +96,9 @@ function solve() {
         // result += `\nAverage decoration factor: ${checkedDecFactorAvgAmount.toFixed(1)}`;
         
         // // Option 3
-        // let result = `Bought furniture: ${checkedNames.join(', ')}\nTotal price: ${checkedTotalPrice.toFixed(2)} \nAverage decoration factor: ${checkedDecFactorAvgAmount.toFixed(1)}`;
+        let result = `Bought furniture: ${checkedNames.join(', ')}\nTotal price: ${checkedTotalPrice.toFixed(2)} \nAverage decoration factor: ${checkedDecFactorAvgAmount.toFixed(1)}`;
         
         // // Set result for Option 2 & 3
-        // outputElement.value = result; // from .textContent to .value
+        outputElement.value = result; // from .textContent to .value
     }
 }
