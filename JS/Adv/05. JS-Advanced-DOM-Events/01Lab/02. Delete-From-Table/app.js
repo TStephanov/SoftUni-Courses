@@ -1,33 +1,18 @@
 function deleteByEmail() {
-    // set result element as empty string - when 'Delete' is pressed more than once
-    let resultElement = document.getElementById('result');
-    // take user input
-    let userInputElement = document.querySelector('input[name="email"]');
+    let list = document.querySelectorAll('tbody tr');
+    let userInput = document.querySelector('input[name="email"]');
+    let deleted = false;
 
-    // extact table info
-    let emailTableElements = document.querySelectorAll('tr td:nth-of-type(2)');
-    let wasDeleted = false;
-
-    for (const cell of emailTableElements) {
-        // check if user input is in the table
-        if (cell.textContent === userInputElement.value) {
-            cell.parentNode.parentNode.removeChild(cell.parentNode);
-            wasDeleted = true;
-            // breakdown:
-            // - cell: 2-nd td element of each row
-            // - cell.parentNode - the row of current td element
-            // - cell.parentNode.parentNode - the whole table(having the row and td)
-            // - .removeChild(cell.parentNode) - remove that row(cell.parentNode) of the whole table, having searched td
+    [...list].forEach(x => {
+        if (x.querySelector('td:nth-of-type(2)').textContent === userInput.value) {
+            x.remove();
+            deleted = true;
         }
-    }
+    });
 
-    if (wasDeleted) {
-        //  - if row(s) was(ere) deleted, set 'Deleted' as content of element with id="result"
-        // resultElement.appendChild(document.createTextNode('Deleted.')); // when using appendChild, we should empty the element for each 'Delete' press - otherwise, will be concatenation of results from each press, wheter 'Deleted.' or 'Not found.'
-        resultElement.textContent = 'Deleted.'; // therefore, using '.textContent' - to skip the empty step
+    if (deleted) {
+        document.getElementById('result').textContent = 'Deleted.';
     } else {
-        // - set 'Not found.'
-        // resultElement.appendChild(document.createTextNode('Not found.'));
-        resultElement.textContent = 'Not found.';
+        document.getElementById('result').textContent = 'Not found.';
     }
 }

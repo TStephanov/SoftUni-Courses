@@ -1,28 +1,20 @@
 function addItem() {
-    // take ul element
-    let listElements = document.getElementById('items');
-
-    // take user input
-    let userInputElement = document.getElementById('newItemText');
-
-    // create li element with a element - [Delete]
-    let newLiElement = document.createElement('li');
+    // take input
+    const userInputElement = document.getElementById('newItemText');
+    // create new li element with:
+    const newLiElement = document.createElement('li');
+    // input element
     newLiElement.textContent = userInputElement.value;
-    userInputElement.value = ''; // empty the input field uppon each click of 'Add' button
-
-    let newInsideAElement = document.createElement('a');
-    newInsideAElement.textContent = '[Delete]';
-    newInsideAElement.href = '#';
-    newInsideAElement.addEventListener('click', () => {
-        newInsideAElement.parentNode.parentNode.removeChild(newInsideAElement.parentNode);
+    const newAElement = document.createElement('a');
+    newAElement.textContent = '[Delete]';
+    newAElement.href = '#';
+    // delete element with added event listener
+    newAElement.addEventListener('click', (e) => {
+       e.currentTarget.parentNode.remove(e.currentTarget.parentNode);
     });
-    // Ivo Papazov
-    // newInsideAElement.addEventListener('click', (e) => {
-    //     e.currentTarget.parentNode.remove();
-    // });
+    newLiElement.appendChild(newAElement);
 
-    newLiElement.appendChild(newInsideAElement);
-
-    // append newly created element to the list
-    listElements.appendChild(newLiElement);
+    let listElement = document.getElementById('items');
+    listElement.appendChild(newLiElement);
+    userInputElement.value = '';
 }
