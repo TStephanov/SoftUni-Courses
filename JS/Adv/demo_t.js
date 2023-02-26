@@ -1,9 +1,8 @@
 function test() {
-    const buttonEl = document.querySelector('input[type="button"]');
-    buttonEl.addEventListener('click', (ev) => {
-        console.log(ev);
-        document.querySelector('textarea').textContent = document.querySelector('td').textContent;
-    })
+    let arr = [1, 2, 1, 4, 5];
+    let result = new Set(arr);
+    console.log(arr.length);
+    console.log(Array.from(result).length);
 }
 
 test();
