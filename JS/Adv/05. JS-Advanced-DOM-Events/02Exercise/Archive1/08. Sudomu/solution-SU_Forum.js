@@ -30,8 +30,7 @@ function solve() {
         for (let i = 1; i < matrix.length; i++) {
             let row = matrix[i];
             let col = matrix.map(row => row[i]);
-            console.log(col);
-            console.log([...new Set(col)]);
+            
             if (col.length != [...new Set(col)].length || row.length != [...new Set(row)].length) { // check for unique values in a row or column
                 isSudomu = false;
                 break;

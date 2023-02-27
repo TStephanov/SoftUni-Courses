@@ -4,8 +4,10 @@ function solve() {
         .forEach(button => {
             if (button.textContent === 'Quick Check') {
                 button.addEventListener('click', check);
+                button.style.cursor = 'pointer';
             } else if (button.textContent === 'Clear') {
-                button.addEventListener('click', clear)
+                button.addEventListener('click', clear);
+                button.style.cursor = 'pointer';
             }
         });
 
@@ -24,8 +26,9 @@ function solve() {
             const colArr = col.map(el => Number(el.value));
             const colResult = new Set(colArr);
 
-            if (row.length !== Array.from(rowResult).length || col.length !== Array.from(colResult).length) {
+            if (row.length !== [...new Set(rowResult)].length || col.length !== [...new Set(colResult)].length) {
                 isSolved = false;
+                break;
             }
         }
 
@@ -39,7 +42,9 @@ function solve() {
             // - if yes duplicates -> not solve
             let table = e.target.parentNode.parentNode.parentNode.parentNode;
             table.setAttribute('style', 'border: 2px solid red');
+            // table.style.border = '2px solid red'; // a colleague way
             document.querySelector('div[id="check"] p').setAttribute('style', 'color: red')
+            // document.querySelector('div[id="check"] p').style.color = 'red'; // a colleague way
             document.querySelector('div[id="check"] p').textContent = 'NOP! You are not done yet...';
         }
     }
@@ -52,7 +57,8 @@ function solve() {
                 Array.from(row.querySelectorAll('td input'))
                     .forEach(cell => cell.value = '');
             });
-        table.removeAttribute('style');
+            
+        table.setAttribute('style', 'border: none');
         document.querySelector('div[id="check"] p').textContent = '';
         document.querySelector('div[id="check"]').removeAttribute('style');
     }
