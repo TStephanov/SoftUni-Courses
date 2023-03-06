@@ -1,12 +1,14 @@
 function demo() {
-    let arr = [1, 2, 3, 12, 5, 6, 7];
+    // spred operator
+    let arr = [1, 2, 3, 'four', 'five', 6];
+    console.log(...arr);
 
-    function isFound(el) {
-        return el > 10;
+    // rest operator
+    function myFunc(...elements) {
+        console.log(elements);
+        elements.forEach(element => console.log(element));
     }
-
-    let result = arr.find(isFound);
-    console.log(result);
+    let result = myFunc(1, 2, 3, 4, 5);
 }
 
 demo();
