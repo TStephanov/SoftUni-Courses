@@ -1,12 +1,25 @@
-function demo() {
-    let array = ['One', 'Two', 'Three', 'One', 'Two', 'Three'];
-    // while (array.includes('One')) {
-    //     array.splice(array.indexOf('One'), 1);
-    // }
+function func1() {
+    const a = 1;
 
-    array = array.filter(el => el !== 'One');
+    function func2() {
+        const b = 2;
 
-    console.log(array);
+        function func3() {
+            const c = 3;
+
+            function func4() {
+                const d = 4;
+
+                return [a, b, c, d];
+            }
+
+            return func4();
+        }
+
+        return func3();
+    }
+
+    return func2();
 }
 
-demo();
+console.log(func1()); // [ 1, 2, 3, 4 ]

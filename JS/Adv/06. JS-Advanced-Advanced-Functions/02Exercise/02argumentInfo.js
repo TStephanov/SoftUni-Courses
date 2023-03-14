@@ -1,7 +1,8 @@
 function info(...elements) {
     let objectsInfo = {};
+    console.log(elements)
 
-    elements.forEach(element => {
+    Array.from(elements).forEach(element => {
         console.log(`${typeof element}: ${element}`);
 
         if (objectsInfo.hasOwnProperty(typeof element) === false) {
