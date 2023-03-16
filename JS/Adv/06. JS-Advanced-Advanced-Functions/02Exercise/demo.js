@@ -1,8 +1,16 @@
-// other sample for rest
-function test(...elements) {
-    console.log(arguments);
-    console.log(Array.from(arguments));
-    console.log(elements); // ...rest operator
+function add(input) {
+    let sum = 0;
+
+    function inner(value) {
+        sum += value;
+        return inner;
+    }
+    inner.toString = () => {
+        return sum;
+    }
+
+    return inner(input);
 }
 
-test('cat', 'cat', 42, 35, 36, function () { console.log('Hello world!'); });
+// console.log(add(1).toString());
+console.log(add(1)(6)(-3).toString());
