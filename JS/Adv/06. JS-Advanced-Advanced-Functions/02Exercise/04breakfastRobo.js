@@ -88,23 +88,23 @@ function solution() {
         const message = resultFunc(param1, param2);
         return message;
     }
-
+    console.log(nutrients);
     return call;
 }
 
 
 let manager = solution();
-// console.log(manager("restock flavour 50")); // Success
+console.log(manager("restock flavour 50")); // Success
 // console.log(manager("prepare lemonade 4")); // Error: not enough carbohydrate in stock 
 
-console.log(manager("restock flavour 50 "));
-console.log(manager("prepare lemonade 4 "));
-console.log(manager("restock carbohydrate 10"));
-console.log(manager("restock flavour 10"));
-console.log(manager("prepare apple 1"));
-console.log(manager("restock fat 10"));
-console.log(manager("prepare burger 1"));
-console.log(manager("report"));
+// console.log(manager("restock flavour 50 "));
+// console.log(manager("prepare lemonade 4 "));
+// console.log(manager("restock carbohydrate 10"));
+// console.log(manager("restock flavour 10"));
+// console.log(manager("prepare apple 1"));
+// console.log(manager("restock fat 10"));
+// console.log(manager("prepare burger 1"));
+// console.log(manager("report"));
 // console.log(manager('prepare turkey 1')); // Error: not enough protein in stock
 // console.log(manager('restock protein 10')); // Success
 // console.log(manager('prepare turkey 1')); // Error: not enough carbohydrate in stock
