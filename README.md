@@ -1,6 +1,6 @@
 # SoftUni-Courses
-Hello,
+<h2>Hello,</h2>
 
-It is a repository where code written solutions for tasks of Software University are stored.
+<strong>It is a repository where code written solutions for tasks of Software University are stored.</strong>
 
-Each task solution, will have it's instructions in separate text file.
+<style="color:lime">Each task solution, will have it's instructions in separate text file.</style>
