@@ -14,4 +14,6 @@ function sort(arr, sort) {
     return arr;
 }
 
+console.log(start);
+
 sort([14, 7, 17, 6, 8], 'asc');
