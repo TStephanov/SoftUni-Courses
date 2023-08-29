@@ -1,6 +1,11 @@
-function test() {
-    let string = 'hello';
-    console.log(string.length);
+function calc(num) {
+    num--;
+    
+    if (num === 0) {
+        return num;
+    }
+
+    return calc(num);
 }
 
-test();
+console.log(calc(10));
