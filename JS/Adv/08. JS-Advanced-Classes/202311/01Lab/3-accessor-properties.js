@@ -1,11 +1,21 @@
 class Circle {
+    // Private property
+    #pi = Math.PI;
+    #perimeter = 0;
+
+    // Private method
+    #privateMethod() {
+
+    }
+
     constructor(radius) {
         this.radius = radius;
+        this.#perimeter = 2 * Math.PI * this.radius;
     }
 
     // Get existing values
     get area() {
-        return Math.PI * (this.radius ** 2);
+        return this.#pi * (this.radius ** 2);
     }
 
     // // Update existing values
@@ -29,6 +39,18 @@ class Circle {
 
         this.radius = value / 2;
     }
+
+    get perimeter() {
+        return this.#perimeter;
+    }
+
+    set perimeter(value) {
+        if (value < 0) {
+            throw new Error('Perimeter can not be less than 0');;
+        }
+
+        this.#perimeter = value;
+    }
 }
 
 let circle = new Circle(2);
@@ -46,3 +68,8 @@ circle.diameter = 10;
 console.log(circle.radius);
 console.log(circle.diameter);
 console.log(circle.area);
+
+// Using private property
+console.log(circle.perimeter);
+circle.perimeter = 20;
+console.log(circle.perimeter);
