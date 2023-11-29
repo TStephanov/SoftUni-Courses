@@ -1,3 +1,4 @@
+// STATIC METHOD & PROPERTY - called from the class (not from the instance of the class)
 class Cat {
     static legNumber = 4; // static property
     isHungry = true; // proper way to set a default value, non-dynamic one, e.g. not based on the input
@@ -23,8 +24,6 @@ class Cat {
 
 let cat = new Cat('Navcho');
 cat.makeSound();
-
-// STATIC METHOD & PROPERY - called from the class (not from the instance of the class)
 
 // Static method
 Cat.vetCheck(cat);
