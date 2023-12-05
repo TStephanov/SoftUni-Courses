@@ -1,10 +1,11 @@
 class Stringer {
-    constructor(string, length) {
-        this.innerString = string;
+    constructor(str, length) {
+        this.innerString = str;
         this.innerLength = length;
     }
 
     increase(length) {
+        // check if increase is invoked with negative value
         if (this.innerLength + length > 0) {
             this.innerLength += length;
         } else {

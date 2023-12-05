@@ -1,28 +1,30 @@
 class List {
-    elements = [];
-    size = 0;
+    constructor () {
+        this.result = [];
+        this.size = this.result.length; // Comm1: Ivo D way, instead of mine to increment/decrements upon add or remove
+    }
 
     add(value) {
-        this.elements.push(value);  
-        this.sort(this.elements);      
-        this.size++;
+        this.result.push(value);  
+        this.sort(this.result);      
+        this.size = this.result.length; // see Comm1
     }
 
     remove(index) {
-        if (index >= this.elements.length || index < 0) {
+        if (index >= this.result.length || index < 0) {
             throw new Error ('Command "Remove" => Invalid index - should be within arrays range');
         } else {
-            this.elements.splice(index, 1);
-            this.sort(this.elements);
-            this.size--;
+            this.result.splice(index, 1);
+            // this.sort(this.result); // no need to sort here, as elements are sorted upon add
+            this.size = this.result.length; // see Comm1
         }        
     }
     
     get(index) {
-        if (index >= this.elements.length || index < 0) {
+        if (index >= this.result.length || index < 0) {
             throw new Error ('Command "Get" => Invalid index - should be within arrays range');
         } else {
-            return this.elements[index];
+            return this.result[index];
         }  
     }
 
