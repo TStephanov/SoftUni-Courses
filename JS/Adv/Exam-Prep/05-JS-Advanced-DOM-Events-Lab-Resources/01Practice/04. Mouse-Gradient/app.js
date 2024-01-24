@@ -1,6 +1,6 @@
 function attachGradientEvents() {
     const gradientBoxElement = document.getElementById('gradient');
-    gradientBoxElement.addEventListener('mousemove', position);
+    gradientBoxElement.addEventListener('click', position);
     let resultElement = document.querySelector('#result');
 
     function position(e) {
@@ -8,9 +8,9 @@ function attachGradientEvents() {
         // console.log(percentage);
         // console.log(`offsetLeft: ${e.target.offsetLeft}`);
         // console.log(`clientWidth: ${e.target.clientWidth}`)
-        resultElement.textContent = percentage + '%';
-        // console.log(e);
-        // console.log(e.offsetX);
+        // resultElement.textContent = percentage + '%';
+        console.log(e);
+        console.log(e.offsetX);
     }
 }
 

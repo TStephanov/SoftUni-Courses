@@ -9,4 +9,4 @@ function focused() {
             e.target.parentNode.classList.remove('focused');
         });
     });
-}
+};
