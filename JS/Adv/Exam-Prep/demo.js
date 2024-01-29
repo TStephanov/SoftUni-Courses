@@ -1,10 +1,19 @@
-function demo() {
-    const answers = {
-        "Question #1": 'onclick',
-        "Question #2": 'JSON.stringify()',
-        "Question #3": 'A programming API for HTML and XML documents',
-    };
-    console.log(answers['Question #3'].includes('A programming API for HTML and XML documents'));
-}
+function solve() {
+    const person = {
+        name: "Peter",
+        respond() {
+            alert(`${this.name} says hello!`);
+        }
+    }
 
-demo();
+    const chok = 'CHOK';
+
+    const boundRespond = person.respond.bind(person);
+    // document.getElementById('callBtn').addEventListener('click', person.respond);
+    // document.getElementById('callBtn').addEventListener('click', boundRespond);
+    document.getElementById('callBtn').addEventListener('click', test);
+
+    function test(pryts, chok) {
+        console.log(pryts + chok);
+    }
+}
