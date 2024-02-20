@@ -1,5 +1,5 @@
-function test(input) {
-    console.log(input.split('-'));
+function test() {
+    console.log('This is a test ;)');
 }
 
-test('all');
+test();
